@@ -21,7 +21,7 @@ namespace Data.Infrastructủe
         {
             get { return dbContext ?? (dbContext = DbFactory.Init()); }
         }
-        public RepositoryBase(IUnitOfWỏk unitOfWỏk, IDbFactory dbFactory)
+        public RepositoryBase(IDbFactory dbFactory)
         {
             this.DbFactory = dbFactory;
             dbSet = DbContext.Set<T>();
