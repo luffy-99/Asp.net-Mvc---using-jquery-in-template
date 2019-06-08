@@ -328,3 +328,7 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+ShopOnline/Assess/admin/crud-js/crud-js.js
+ShopOnline/Areas/Admin/Views/User/GetAllUser.cshtml
+ShopOnline/Scripts/mustache.min.js
+ShopOnline/Areas/Admin/Views/Shared/_Layout.cshtml

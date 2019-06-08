@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Data.Infrastructủe
 {
-    public class UnitOfWork : IUnitOfWỏk
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly IDbFactory dbFactory;
         private ShopOnlineDbContext dbContext;

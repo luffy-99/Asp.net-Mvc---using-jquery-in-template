@@ -8,14 +8,22 @@ namespace Models
     using System.Data.Entity.Spatial;
 
     [Table("User")]
-    public partial class User : IdentityUser
+    public partial class User 
     {
-        [MaxLength(256)]
-        public string FullName { set; get; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
+        public int ID { set; get; }
+        [MaxLength(50)]
+        public string Name { set; get; }
+        [MaxLength(50)]
+        [Required]
+        public string UserName { set; get; }
 
-        [MaxLength(256)]
-        public string Address { set; get; }
-
-        public DateTime? BirthDay { set; get; }
+        [MaxLength(50)]
+        [Required]
+        public string PassWord { set; get; }
+        [Required]
+        [MaxLength(50)]
+        public string Position { set; get; }
     }
 }

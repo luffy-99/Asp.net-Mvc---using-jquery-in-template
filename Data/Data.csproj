@@ -52,18 +52,18 @@
     <Compile Include="Infrastructủe\Disposable.cs" />
     <Compile Include="Infrastructủe\IDbFactory.cs" />
     <Compile Include="Infrastructủe\IRepository.cs" />
-    <Compile Include="Infrastructủe\IUnitOfWỏk.cs" />
+    <Compile Include="Infrastructủe\IUnitOfWork.cs" />
     <Compile Include="Infrastructủe\RepositoryBase.cs" />
     <Compile Include="Infrastructủe\UnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{d0f37c0a-f40b-4d28-aa9f-032bdea92be6}</Project>

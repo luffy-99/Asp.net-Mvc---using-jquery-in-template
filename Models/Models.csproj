@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201906061709530_edit-database.Designer.cs">
       <DependentUpon>201906061709530_edit-database.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906070611174_editTableUser.cs" />
+    <Compile Include="Migrations\201906070611174_editTableUser.Designer.cs">
+      <DependentUpon>201906070611174_editTableUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderDetail.cs" />
@@ -91,6 +95,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906061709530_edit-database.resx">
       <DependentUpon>201906061709530_edit-database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906070611174_editTableUser.resx">
+      <DependentUpon>201906070611174_editTableUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

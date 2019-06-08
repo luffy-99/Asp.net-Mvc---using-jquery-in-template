@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Data.Infrastructủe
 {
-    public interface IUnitOfWỏk
+    public interface IUnitOfWork
     {
         void Commit();
     }
