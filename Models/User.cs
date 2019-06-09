@@ -1,6 +1,5 @@
 namespace Models
 {
-    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -8,22 +7,24 @@ namespace Models
     using System.Data.Entity.Spatial;
 
     [Table("User")]
-    public partial class User 
+    public partial class User
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Key]
-        public int ID { set; get; }
-        [MaxLength(50)]
-        public string Name { set; get; }
-        [MaxLength(50)]
-        [Required]
-        public string UserName { set; get; }
+        public int ID { get; set; }
 
-        [MaxLength(50)]
         [Required]
-        public string PassWord { set; get; }
+        [StringLength(50)]
+        public string Name { get; set; }
+
         [Required]
-        [MaxLength(50)]
-        public string Position { set; get; }
+        [StringLength(50)]
+        public string UserName { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string PassWord { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Position { get; set; }
     }
 }

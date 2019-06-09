@@ -46,7 +46,7 @@ namespace Service
 
         public IEnumerable<User> GetAll(string[] includes = null)
         {
-            return userRepository.GetAll();
+            return userRepository.GetAll().OrderBy(x =>x.ID);
         }
 
         public bool GetUser(string userName, string passWord)
@@ -56,7 +56,7 @@ namespace Service
 
         public User GetUserById(int id)
         {
-            return userRepository.GetUserById(id);
+            return userRepository.GetById(id);
         }
 
         public void Save()

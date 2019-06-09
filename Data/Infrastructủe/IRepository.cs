@@ -13,5 +13,6 @@ namespace Data.Infrastructủe
         T Delete(int id);
         T Delete(T entity);
         IEnumerable<T> GetAll(string[] includes = null);
+        T GetById(int id);
     }
 }

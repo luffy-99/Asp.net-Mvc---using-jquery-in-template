@@ -5,30 +5,28 @@ namespace Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-    [Table("Slides")]
+
     public partial class Slide
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { set; get; }
+        public int ID { get; set; }
 
         [Required]
-        [MaxLength(256)]
-        public string Name { set; get; }
+        [StringLength(256)]
+        public string Name { get; set; }
 
-        [MaxLength(256)]
-        public string Description { set; get; }
+        [StringLength(256)]
+        public string Description { get; set; }
 
-        [MaxLength(256)]
-        public string Image { set; get; }
+        [StringLength(256)]
+        public string Image { get; set; }
 
-        [MaxLength(256)]
-        public string Url { set; get; }
+        [StringLength(256)]
+        public string Url { get; set; }
 
-        public int? DisplayOrder { set; get; }
+        public int? DisplayOrder { get; set; }
 
-        public bool Status { set; get; }
+        public bool Status { get; set; }
 
-        public string Content { set; get; }
+        public string Content { get; set; }
     }
 }

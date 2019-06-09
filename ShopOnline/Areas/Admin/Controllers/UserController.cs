@@ -9,6 +9,7 @@ using ShopOnline.Infrastructure.Extension;
 using Models;
 using AutoMapper;
 using ShopOnline.Mapping;
+using PagedList;
 
 namespace ShopOnline.Areas.Admin.Controllers
 {
@@ -32,9 +33,10 @@ namespace ShopOnline.Areas.Admin.Controllers
             User user = new User();
             user.UpdateUser(userView);
             var result = userService.Add(user);
+            userService.Save();
             if (result.ID > 0)
             {
-                return RedirectToAction("GetAll", "User");
+                return RedirectToAction("GetAllUser", "User");
             }
             return View();
         }
@@ -42,36 +44,36 @@ namespace ShopOnline.Areas.Admin.Controllers
         public ActionResult DeleteUser(int id)
         {
             var result = userService.Delete(id);
+            userService.Save();
             if (result.ID > 0)
             {
-                return RedirectToAction("GetAll", "User");
+                return RedirectToAction("GetAllUser", "User");
             }
             return View();
         }
-        [Route("GetAll")]
-        public ActionResult GetAllUser()
-        {
-            return View();
-        }
-        public JsonResult GetAll(int page, int pageSize = 2)
+        public ActionResult GetAllUser(int page=1, int pageSize = 2)
         {
             var result = userService.GetAll();
             IEnumerable<UserViewAdmin> userViews = AutoMapperConfiguration.Mapping.Map<IEnumerable<User>, IEnumerable<UserViewAdmin>>(result);
-            var userPagging = userViews.Skip((page - 1) * pageSize).Take(pageSize);
-            var totalRow = userViews.Count();
-            return Json(new {
-                data = userPagging,
-                total = totalRow,
-                status = true
-            },JsonRequestBehavior.AllowGet);
+            userViews = userViews.ToPagedList(page, pageSize);
+            return View(userViews);
         }
+        [HttpGet]
+        public ActionResult UpdateUser(int id)
+        {
+            var userEntity = userService.GetUserById(id);
+            var userView = AutoMapperConfiguration.Mapping.Map<User, UserViewAdmin>(userEntity);
+            return View(userView);
+        }
+        [HttpPost]
         [Route("Update")]
         public ActionResult UpdateUser(UserViewAdmin userView)
         {
             User user = new User();
             user.UpdateUser(userView);
             userService.Update(user);
-            return View();
+            userService.Save();
+            return RedirectToAction("GetAllUser", "User");
         }
     }
 }

@@ -5,16 +5,14 @@ namespace Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-    [Table("VisitorStatistics")]
+
     public partial class VisitorStatistic
     {
-        [Key]
-        public Guid ID { set; get; }
+        public Guid ID { get; set; }
 
-        [Required]
-        public DateTime VisitedDate { set; get; }
+        public DateTime VisitedDate { get; set; }
 
-        [MaxLength(50)]
-        public string IPAddress { set; get; }
+        [StringLength(50)]
+        public string IPAddress { get; set; }
     }
 }

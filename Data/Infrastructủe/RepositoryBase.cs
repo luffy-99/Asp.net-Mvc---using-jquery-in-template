@@ -1,4 +1,5 @@
 ﻿using Models;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -60,6 +61,11 @@ namespace Data.Infrastructủe
         {
             dbSet.Attach(entity);
             dbContext.Entry(entity).State = EntityState.Modified;
+        }
+
+        public T GetById(int id)
+        {
+            return dbSet.Find(id);
         }
     }
 }

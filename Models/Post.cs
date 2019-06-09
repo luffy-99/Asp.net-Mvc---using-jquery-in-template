@@ -1,45 +1,62 @@
 namespace Models
 {
-    using Models.Abstact;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-    [Table("Posts")]
-    public partial class Post : Auditable
+
+    public partial class Post
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { set; get; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Post()
+        {
+            PostTags = new HashSet<PostTag>();
+        }
+
+        public int ID { get; set; }
 
         [Required]
-        [MaxLength(256)]
-        public string Name { set; get; }
+        [StringLength(256)]
+        public string Name { get; set; }
 
         [Required]
-        [MaxLength(256)]
-        [Column(TypeName = "varchar")]
-        public string Alias { set; get; }
+        [StringLength(256)]
+        public string Alias { get; set; }
 
-        [Required]
-        public int CategoryID { set; get; }
+        public int CategoryID { get; set; }
 
-        [MaxLength(256)]
-        public string Image { set; get; }
+        [StringLength(256)]
+        public string Image { get; set; }
 
-        [MaxLength(500)]
-        public string Description { set; get; }
+        [StringLength(500)]
+        public string Description { get; set; }
 
-        public string Content { set; get; }
+        public string Content { get; set; }
 
-        public bool? HomeFlag { set; get; }
-        public bool? HotFlag { set; get; }
-        public int? ViewCount { set; get; }
+        public bool? HomeFlag { get; set; }
 
-        [ForeignKey("CategoryID")]
-        public virtual PostCategory PostCategory { set; get; }
+        public bool? HotFlag { get; set; }
 
-        public virtual IEnumerable<PostTag> PostTags { set; get; }
+        public int? ViewCount { get; set; }
+
+        public DateTime? CreatedDate { get; set; }
+
+        public string CreatedBy { get; set; }
+
+        public DateTime? UpdatedDate { get; set; }
+
+        public string UpdatedBy { get; set; }
+
+        public string MetaKeyword { get; set; }
+
+        public string MetaDescription { get; set; }
+
+        public bool Status { get; set; }
+
+        public virtual PostCategory PostCategory { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PostTag> PostTags { get; set; }
     }
 }

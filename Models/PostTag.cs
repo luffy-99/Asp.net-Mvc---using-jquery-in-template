@@ -1,27 +1,39 @@
 namespace Models
 {
-    using Models.Abstact;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
-    [Table("PostTags")]
-    public partial class PostTag : Auditable
+
+    public partial class PostTag
     {
         [Key]
         [Column(Order = 0)]
-        public int PostID { set; get; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int PostID { get; set; }
 
         [Key]
-        [Column(TypeName = "varchar", Order = 1)]
-        [MaxLength(50)]
-        public string TagID { set; get; }
+        [Column(Order = 1)]
+        [StringLength(50)]
+        public string TagID { get; set; }
 
-        [ForeignKey("PostID")]
-        public virtual Post Post { set; get; }
+        public DateTime? CreatedDate { get; set; }
 
-        [ForeignKey("TagID")]
-        public virtual Tag Tag { set; get; }
+        public string CreatedBy { get; set; }
+
+        public DateTime? UpdatedDate { get; set; }
+
+        public string UpdatedBy { get; set; }
+
+        public string MetaKeyword { get; set; }
+
+        public string MetaDescription { get; set; }
+
+        public bool Status { get; set; }
+
+        public virtual Post Post { get; set; }
+
+        public virtual Tag Tag { get; set; }
     }
 }
