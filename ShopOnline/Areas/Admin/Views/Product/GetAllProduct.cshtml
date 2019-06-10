@@ -1,0 +1,95 @@
+﻿@model PagedList.IPagedList<ShopOnline.Areas.Admin.Models.ProductViewAdmin>
+@using PagedList.Mvc;
+@{
+   
+        ViewBag.Title = "GetAllProduct";
+        Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+ }
+
+    <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- DataTables Example -->
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    Data Product
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Alias</th>
+                                    <th>Category</th>
+                                    <th>Image</th>
+                                    <th>MoreImage</th>
+                                    <th>Price</th>
+                                    <th>PromotionPrice</th>
+                                    <th>Tags</th>
+                                    <th>Quantity</th>
+                                    <th>Warranty</th>
+                                    <th>Description</th>
+                                    <th>Content</th>
+                                    <th>MetaKeyword</th>
+                                    <th>MetaDescription</th>
+                                    <th>CreatedDate</th>
+                                    <th>CreatedBy</th>
+                                    <th>UpdatedDate</th>
+                                    <th>UpdatedBy</th>
+                                    <th>Status</th>
+                                    <th>HomeFlag</th>
+                                    <th>HotFlag</th>
+                                    <th>ViewCount</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.ID</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.Alias</td>
+                                        <td>@item.CategoryID</td>
+                                        <td>@item.Image</td>
+                                        <td>@item.MoreImages</td>
+                                        <td>@item.Price</td>
+                                        <td>@item.PromotionPrice</td>
+                                        <td>@item.Tags</td>
+                                        <td>@item.Quantity</td>
+                                        <td>@item.Warranty</td>
+                                        <td>@item.Description</td>
+                                        <td>@item.Content</td>
+                                        <td>@item.MetaKeyword</td>
+                                        <td>@item.MetaDescription</td>
+                                        <td id="CreatedDate">@item.CreatedDate</td>
+                                        <td>@item.CreatedBy</td>
+                                        <td id="UpdatedDate">@item.UpdatedDate</td>
+                                        <td>@item.UpdatedBy</td>
+                                        <td><span class="badge badge-pill badge-success">@item.Status</span></td>
+                                        <td><span class="badge badge-pill badge-success">@item.HomeFlag</span></td>
+                                        <td><span class="badge badge-pill badge-success">@item.HotFlag</span></td>
+                                        <td>@item.ViewCount</td>
+                                        <td>
+                                            <button type="button" class="btn btn-success" ><a href="/Admin/Product/AddProduct"><i class="material-icons" style="font-size:15px">&#xe89c;</i></a></button>
+                                            <button type="button" class="btn btn-warning"><a href="/Admin/Product/UpdateProduct/@item.ID"><i class='far' style="font-size:15px">&#xf044;</i></a></button>
+                                            <button type="button" class="btn btn-danger"><a href="/Admin/Product/DeleteProduct/@item.ID"><i class="material-icons" style="font-size:15px">&#xe872;</i></a></button>
+                                        </td>
+                                    </tr>
+
+                                }
+                            </tbody>
+                        </table>
+                        @Html.PagedListPager(Model, page => Url.Action("GetAllProduct", new { page }))
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+

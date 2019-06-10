@@ -15,7 +15,8 @@ namespace Service
         void Update(Product product);
         Product Delete(int id);
         Product Delete(Product product);
-        IEnumerable<Product> GeAll(string[] includes= null);
+        IEnumerable<Product> GetAll(string[] includes= null);
+        Product GetById(int id);
         void Save();
     }
     public class ProductService : IProductService
@@ -42,9 +43,14 @@ namespace Service
             return _productRepository.Delete(product);
         }
 
-        public IEnumerable<Product> GeAll(string[] includes = null)
+        public IEnumerable<Product> GetAll(string[] includes = null)
         {
             return _productRepository.GetAll(includes);
+        }
+
+        public Product GetById(int id)
+        {
+            return _productRepository.GetById(id);
         }
 
         public void Save()

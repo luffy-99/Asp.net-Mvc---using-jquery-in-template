@@ -1,0 +1,111 @@
+﻿@model ShopOnline.Areas.Admin.Models.ProductViewAdmin
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card mb-3 w-100">
+<div class="card-header">
+    <i class="fas fa-table"></i>
+    Create Product
+</div>
+<div class="card-body">
+    @using (Html.BeginForm("AddProduct", "Product", FormMethod.Post))
+    {
+        <div class="form-group">
+            <label for="Name">Name</label>
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control w-50", @placeholder = "Enter Name", @id = "Name" })
+
+        </div>
+        <div class="form-group">
+            <label for="Alias">Alias</label>
+            @Html.TextBoxFor(model => model.Alias, new { @class = "form-control w-50", @placeholder = "Enter Alias Name", @id = "Alias" })
+        </div>
+        <div class="form-group">
+            <label for="Category">Category</label>
+            @Html.DropDownListFor(model => model.CategoryID, null, new { @class = "form-control w-50", @placeholder = "Enter Category", @id = "Category" })
+        </div>
+        <div class="form-group">
+            <label for="Image">Image</label>
+            @Html.TextBoxFor(model => model.Image, htmlAttributes: new { @class = "form-control w-50", @placeholder = "", @id = "Image" })
+            <a id="btnSelectImage"> Select Image</a>
+        </div>
+        <div class="form-group">
+            <label for="MoreImage">More Image</label>
+            @Html.TextBoxFor(model => model.MoreImages, new { @class = "form-control w-50", @placeholder = "", @id = "MoreImage" })
+        </div>
+        <div class="form-group">
+            <label for="Price">Price</label>
+            @Html.TextBoxFor(model => model.Price, new { @class = "form-control w-50", @placeholder = "Price", @id = "Price" })
+        </div>
+        <div class="form-group">
+            <label for="Promotion">Promotion</label>
+            @Html.TextBoxFor(model => model.PromotionPrice, new { @class = "form-control w-50", @placeholder = "Promotion", @id = "Promotion" })
+        </div>
+        <div class="form-group">
+            <label for="Warranty">Warranty</label>
+            @Html.TextBoxFor(model => model.Warranty, new { @class = "form-control w-50", @placeholder = "Warranty", @id = "Warranty" })
+        </div>
+        <div class="form-group">
+            <label for="Description">Description</label>
+            @Html.TextAreaFor(model => model.Description, new { @class = "form-control w-50", @placeholder = "Desciption", @id = "Desciption" })
+        </div>
+        <div class="form-group">
+            <label for="Content">Content</label>
+            @Html.TextAreaFor(model => model.Content, new { @class = "form-control w-50", @placeholder = "", @id = "Content" })
+        </div>
+        <div class="form-group">
+            <label for="MetaKeyword">MetaKeyword</label>
+            @Html.TextBoxFor(model => model.MetaKeyword, new { @class = "form-control w-50", @placeholder = "MetaKeyword", @id = "MetaKeyword" })
+        </div>
+        <div class="form-group">
+            <label for="MetaDescription">MetaDescription</label>
+            @Html.TextAreaFor(model => model.MetaDescription, new { @class = "form-control w-50", @placeholder = "MetaDescription", @id = "MetaDescription" })
+        </div>
+        <div class="form-group">
+            <label for="CreatedDate">CreatedDate</label>
+            @Html.TextBoxFor(model => model.CreatedDate, new { @class = "form-control w-50", @placeholder = "", @id = "CreatedDate" })
+        </div>
+        <div class="form-group">
+            <label for="CreatedBy">CreatedBy</label>
+            @Html.TextBoxFor(model => model.CreatedBy, new { @class = "form-control w-50", @placeholder = "CreatedBy", @id = "CreatedBy" })
+        </div>
+        <div class="form-group">
+            <label for="UpdatedDate">UpdatedDate</label>
+            @Html.TextBoxFor(model => model.UpdatedDate, htmlAttributes: new { @class = "form-control w-50", @placeholder = "", id = "UpdatedDate" })
+        </div>
+        <div class="form-group">
+            <label for="UpdatedBy">UpdatedBy</label>
+            @Html.TextBoxFor(model => model.UpdatedBy, new { @class = "form-control w-50", @placeholder = "UpdatedBy", @id = "UpdatedBy" })
+        </div>
+        <div class="form-group">
+            <label for="ViewCount">ViewCount</label>
+            @Html.TextBoxFor(model => model.ViewCount, new { @class = "form-control w-50", @placeholder = "ViewCount", @id = "ViewCount" })
+        </div>
+        <div class="form-group">
+            <label for="ViewCount">ViewCount</label>
+            @Html.TextBoxFor(model => model.Quantity, new { @class = "form-control w-50", @placeholder = "Quantity", @id = "Quantity" })
+        </div>
+        <div class="form-group">
+            <div class="custom-control custom-switch">
+                @Html.CheckBoxFor(model => model.HomeFlag, new { @class = "custom-control-input", @id = "HomeFlag" })
+                <label class="custom-control-label" for="HomeFlag">Home Flag</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="custom-control custom-switch">
+                @Html.CheckBoxFor(model => model.Status, new { @class = "custom-control-input", @id = "Status" })
+                <label class="custom-control-label" for="Status">Status</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="custom-control custom-switch">
+                @Html.CheckBoxFor(model => model.HotFlag, new { @class = "custom-control-input", @id = "HotFlag" })
+                <label class="custom-control-label" for="HotFlag">Hot Flag</label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary ">Submit</button>
+    }
+</div>
+</div>
+

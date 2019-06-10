@@ -17,6 +17,7 @@ namespace ShopOnline.Mapping
             {
                 cfg.CreateMap<Product, ProductViewAdmin>();
                 cfg.CreateMap<User, UserViewAdmin>();
+                cfg.CreateMap<ProductCategory, ProductCategoryViewAdmin>();
             });
             Mapping = mapperConfig.CreateMapper();
         }
