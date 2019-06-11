@@ -8,6 +8,7 @@ namespace ShopOnline.Areas.Admin.Models
 {
     public class LoginViewAdmin
     {
+        public int ID { set; get; }
         [Required(ErrorMessage = "Yêu cầu nhập tên đăng nhập!")]
         public string UserName { set; get; }
         [Required(ErrorMessage = "Yêu cầu nhập mật khẩu!")]

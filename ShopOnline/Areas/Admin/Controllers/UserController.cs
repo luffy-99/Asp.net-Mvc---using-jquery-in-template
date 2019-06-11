@@ -10,10 +10,11 @@ using Models;
 using AutoMapper;
 using ShopOnline.Mapping;
 using PagedList;
+using ShopOnline.Infrastructure.Core;
 
 namespace ShopOnline.Areas.Admin.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         private IUserService userService;
         public UserController(IUserService userService)

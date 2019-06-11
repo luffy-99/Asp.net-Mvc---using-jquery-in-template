@@ -1,6 +1,7 @@
 ﻿using Models;
 using Service;
 using ShopOnline.Areas.Admin.Models;
+using ShopOnline.Infrastructure.Core;
 using ShopOnline.Mapping;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Web.Mvc;
 
 namespace ShopOnline.Areas.Admin.Controllers
 {
-    public class ProductCategoryController : Controller
+    public class ProductCategoryController : BaseController
     {
         private IProductCategoryService productCategoryService;
         public ProductCategoryController(IProductCategoryService productCategoryService)

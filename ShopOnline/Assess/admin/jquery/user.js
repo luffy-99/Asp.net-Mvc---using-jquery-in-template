@@ -1,5 +1,6 @@
-﻿//loai bo nhung the DOM khong can thiet
+﻿
 $(document).ready(function () {
+    //loai bo nhung the DOM khong can thiet
     $("#dataTable_info").remove();
     $("li.active").not(".nav-item").remove();
     $("ul.pagination li a").addClass("page-link ");
@@ -7,6 +8,14 @@ $(document).ready(function () {
     $("div#dataTable_length").remove();
     //position-fixed search textbox
     $("#dataTable_filter").addClass("position-fixed");
+    //datepicker
+    $("#CreatedDate").datetimepicker({
+        pickTime: false
+    });
+    $("#UpdatedDate").datetimepicker({
+        pickTime: false
+    });
+    $("i.gj-icon").remove();
 });
 //tim kiem 
 $(document).ready(function () {
@@ -30,5 +39,31 @@ $(document).ready(function () {
         if ($(this).text() == "False") {
             $(this).addClass("badge badge-pill badge-danger");
         }
+    });
+});
+//active
+$(document).ready(function () {
+    $("ul.sidebar li a ").on("click", function () {
+        var name = $(this).text();
+        $(document).ready(function () {
+            $("ul.sidebar li a ").each(function () {
+                if ($(this).text() == name) {
+                    console.log($(this).text() == name);
+                    $(this).addClass("active");
+                }
+            });
+
+        });
+        
+    });
+});
+$(document).ready(function () {
+    $('#selectImage').on("click", function (e) {
+        e.preventDefault();
+        var finder = new CKFinder();
+        finder.selectActionFunction = function (url) {
+            $("#Image").val(url);
+        };
+        finder.popup();
     });
 });

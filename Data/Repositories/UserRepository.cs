@@ -13,6 +13,7 @@ namespace Data.Repositories
     public interface IUserRepository: IRepository<User>
     {
         bool GetUser(string userName, string Pass);
+        User GetUserByName(string userName);
     }
     public class UserRepository : RepositoryBase<User>, IUserRepository
     {
@@ -26,5 +27,9 @@ namespace Data.Repositories
             return dbSet.Count(x => x.UserName == userName && x.PassWord == Pass) > 0;
         }
 
+        public User GetUserByName(string userName)
+        {
+            return dbSet.SingleOrDefault(x => x.UserName == userName);
+        }
     }
 }

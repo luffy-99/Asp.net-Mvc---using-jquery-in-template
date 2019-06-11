@@ -2,6 +2,7 @@
 using PagedList;
 using Service;
 using ShopOnline.Areas.Admin.Models;
+using ShopOnline.Infrastructure.Core;
 using ShopOnline.Infrastructure.Extension;
 using ShopOnline.Mapping;
 using System;
@@ -12,7 +13,7 @@ using System.Web.Mvc;
 
 namespace ShopOnline.Areas.Admin.Controllers
 {
-    public class ProductController : Controller
+    public class ProductController : BaseController
     {
         private IProductService _productService;
         private IProductCategoryService _productCategoryService;
@@ -26,13 +27,18 @@ namespace ShopOnline.Areas.Admin.Controllers
         {
             var productEntity = _productService.GetAll();
             IEnumerable<ProductViewAdmin> productView = AutoMapperConfiguration.Mapping.Map<IEnumerable<Product>, IEnumerable<ProductViewAdmin>>(productEntity);
-            foreach(var product in productView)
+            string[] Category = new string[_productCategoryService.GetAll().Count()+1];
+            foreach (var product in productView)
             {
+                
+                Category[product.CategoryID] = _productCategoryService.GetById(product.CategoryID).Name;
+                
                 if (product.Description.Length > 20)
                 {
                     product.Description = product.Description.Substring(0, 20) + " ...";
                 }
             }
+            ViewBag.categoryName = Category;
             return View(productView.ToPagedList(page, pageSize));
         }
         public void SetViewProductCategory(int? selectedId = null)
@@ -61,6 +67,7 @@ namespace ShopOnline.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult UpdateProduct(int id)
         {
+            SetViewProductCategory();
             var productEntity = _productService.GetById(id);
             ProductViewAdmin productView = AutoMapperConfiguration.Mapping.Map<Product, ProductViewAdmin>(productEntity);
             return View(productView);

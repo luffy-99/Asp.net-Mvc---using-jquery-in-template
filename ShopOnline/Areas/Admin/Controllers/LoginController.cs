@@ -1,6 +1,8 @@
 ﻿
+using Common;
 using Service;
 using ShopOnline.Areas.Admin.Models;
+using ShopOnline.Infrastructure.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +24,11 @@ namespace ShopOnline.Areas.Admin.Controllers
             var isBool = userService.GetUser(loginViewAdmin.UserName,loginViewAdmin.PassWord);
             if (isBool)
             {
+                var userSession = new LoginViewAdmin();
+                var userEntity = userService.GetUserByName(loginViewAdmin.UserName);
+                userSession.ID = userEntity.ID;
+                userSession.UserName = userEntity.UserName;
+                Session.Add(CommonConstants.USER_SESSION, userSession);
                 return RedirectToAction("Index", "HomeAdmin");
             }
             else

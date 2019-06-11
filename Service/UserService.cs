@@ -16,8 +16,10 @@ namespace Service
         User Delete(int id);
         User Delete(User user);
         bool GetUser(string userName, string passWord);
+        User GetUserByName(string userName);
         User GetUserById(int id);
         IEnumerable<User> GetAll(string[] includes = null);
+
         void Save();
     }
     public class UserService : IUserService
@@ -57,6 +59,11 @@ namespace Service
         public User GetUserById(int id)
         {
             return userRepository.GetById(id);
+        }
+
+        public User GetUserByName(string userName)
+        {
+            return userRepository.GetUserByName(userName);
         }
 
         public void Save()
