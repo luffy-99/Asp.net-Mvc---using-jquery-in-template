@@ -28,10 +28,10 @@ $(document).ready(function () {
 });
 //datetime to date
 $(document).ready(function () {
-    var date = $("td#CreatedDate").text().substring(0, 10);
-    $("td#CreatedDate").text(date);
-    var date = $("td#UpdatedDate").text().substring(0, 10);
-    $("td#UpdatedDate").text(date);
+    var date = $("td.CreatedDate").text().substring(0, 10);
+    $("td.CreatedDate").text(date);
+    var date = $("td.UpdatedDate").text().substring(0, 10);
+    $("td.UpdatedDate").text(date);
 });
 //
 $(document).ready(function () {
@@ -57,6 +57,7 @@ $(document).ready(function () {
         
     });
 });
+
 $(document).ready(function () {
     $('#selectImage').on("click", function (e) {
         e.preventDefault();

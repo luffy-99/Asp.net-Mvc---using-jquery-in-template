@@ -17,6 +17,7 @@ namespace Service
         ProductCategory Delete(ProductCategory productCategory);
         IEnumerable<ProductCategory> GetAll(string[] includes = null);
         ProductCategory GetById(int id);
+        List<string> GetNameCategory();
         void Save();
     }
     public class ProductCategoryService : IProductCategoryService
@@ -51,6 +52,11 @@ namespace Service
         public ProductCategory GetById(int id)
         {
             return productCategoryRepository.GetById(id);
+        }
+
+        public List<string> GetNameCategory()
+        {
+            return productCategoryRepository.GetNameCategory();
         }
 
         public void Save()

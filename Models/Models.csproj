@@ -52,6 +52,11 @@
   <ItemGroup>
     <Compile Include="Footer.cs" />
     <Compile Include="MenuGroup.cs" />
+    <Compile Include="Migrations\201906141027089_adc.cs" />
+    <Compile Include="Migrations\201906141027089_adc.Designer.cs">
+      <DependentUpon>201906141027089_adc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderDetail.cs" />
     <Compile Include="Page.cs" />
@@ -72,6 +77,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906141027089_adc.resx">
+      <DependentUpon>201906141027089_adc.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

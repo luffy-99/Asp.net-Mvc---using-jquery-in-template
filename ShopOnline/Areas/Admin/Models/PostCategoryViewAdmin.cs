@@ -9,8 +9,6 @@ namespace ShopOnline.Areas.Admin.Models
     {
         public int ID { set; get; }
         public string Name { set; get; }
-
-
         public string Alias { set; get; }
         public string Description { set; get; }
 

@@ -36,7 +36,7 @@ namespace ShopOnline.Areas.Admin.Models
 
         public int? ViewCount { set; get; }
 
-        public DateTime? CreatedDate { set; get; }
+        public DateTime CreatedDate { set; get; }
 
         public string CreatedBy { set; get; }
 
@@ -54,7 +54,6 @@ namespace ShopOnline.Areas.Admin.Models
 
         public int Quantity { set; get; }
 
-        public decimal OriginalPrice { set; get; }
         public virtual ProductCategoryViewAdmin ProductCategory { set; get; }
     }
 }

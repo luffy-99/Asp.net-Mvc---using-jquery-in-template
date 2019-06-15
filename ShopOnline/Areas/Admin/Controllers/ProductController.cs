@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using Common;
+using Models;
 using PagedList;
 using Service;
 using ShopOnline.Areas.Admin.Models;
@@ -7,6 +8,7 @@ using ShopOnline.Infrastructure.Extension;
 using ShopOnline.Mapping;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -21,6 +23,19 @@ namespace ShopOnline.Areas.Admin.Controllers
         {
             this._productService = productService;
             this._productCategoryService = productCategoryService;
+        }
+        public string UploadFile(HttpPostedFileBase file)
+        {
+            string path = "";
+            if (file.ContentLength > 0)
+            {
+                string fileName = Path.GetFileName(file.FileName);
+                string folderPath = Path.Combine(Server.MapPath("/Data/images/"), fileName);
+                file.SaveAs(folderPath);
+                path += folderPath;
+
+            }
+            return path;
         }
         // GET: Admin/Product
         public ActionResult GetAllProduct(int page=1, int pageSize=3)

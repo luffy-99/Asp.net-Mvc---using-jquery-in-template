@@ -21,6 +21,12 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
+                                <th>Alias</th>
+                                <th>Description</th>
+                                <th>Created By</th>
+                                <th>Created Date</th>
+                                <th>Image</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -30,7 +36,12 @@
                                 <tr>
                                     <td>@item.ID</td>
                                     <td>@item.Name</td>
-
+                                    <td>@item.Alias</td>
+                                    <td>@item.Description</td>
+                                    <td>@item.CreatedBy</td>
+                                    <td class="CreatedDate">@item.CreatedDate</td>
+                                    <td>@item.Image</td>
+                                    <td><span class="badge badge-pill badge-success">@item.Status</span></td>
                                     <td>
                                         <button type="button" class="btn btn-success" style="font-size:5px"><a href="/Admin/User/AddUser"><i class="material-icons" style="font-size:15px">&#xe89c;</i></a></button>
                                         <button type="button" class="btn btn-warning" style="font-size:5px"><a href="/Admin/User/UpdateUser/@item.ID"><i class='far' style="font-size:15px">&#xf044;</i></a></button>

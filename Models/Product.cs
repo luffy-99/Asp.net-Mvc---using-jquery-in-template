@@ -54,7 +54,7 @@ namespace Models
 
         public int Quantity { get; set; }
 
-        public DateTime? CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
 
         public string CreatedBy { get; set; }
 

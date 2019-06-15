@@ -55,7 +55,7 @@
                                         <td>@item.Name</td>
                                         <td>@item.Alias</td>
                                         <td>@ViewBag.categoryName[item.CategoryID]</td>
-                                        <td>@item.Image</td>
+                                        <td><a href="@item.Image"></a></td>
                                         <td>@item.MoreImages</td>
                                         <td>@item.Price</td>
                                         <td>@item.PromotionPrice</td>
@@ -66,9 +66,9 @@
                                         <td>@item.Content</td>
                                         <td>@item.MetaKeyword</td>
                                         <td>@item.MetaDescription</td>
-                                        <td id="CreatedDate">@item.CreatedDate</td>
+                                        <td class="CreatedDate">@item.CreatedDate</td>
                                         <td>@item.CreatedBy</td>
-                                        <td id="UpdatedDate">@item.UpdatedDate</td>
+                                        <td class="UpdatedDate">@item.UpdatedDate</td>
                                         <td>@item.UpdatedBy</td>
                                         <td><span class="badge badge-pill badge-success">@item.Status</span></td>
                                         <td><span class="badge badge-pill badge-success">@item.HomeFlag</span></td>

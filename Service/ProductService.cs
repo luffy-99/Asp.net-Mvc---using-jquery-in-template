@@ -17,6 +17,11 @@ namespace Service
         Product Delete(Product product);
         IEnumerable<Product> GetAll(string[] includes= null);
         Product GetById(int id);
+        List<string> GetNameProduct();
+        IEnumerable<Product> DealsProduct();
+        IEnumerable<Product> LatestProduct();
+        IEnumerable<Product> PickForYou();
+        Product GetByName(string name);
         void Save();
     }
     public class ProductService : IProductService
@@ -31,6 +36,11 @@ namespace Service
         public Product Add(Product product)
         {
             return _productRepository.Add(product);
+        }
+
+        public IEnumerable<Product> DealsProduct()
+        {
+            return _productRepository.DealsProduct();
         }
 
         public Product Delete(int id)
@@ -51,6 +61,26 @@ namespace Service
         public Product GetById(int id)
         {
             return _productRepository.GetById(id);
+        }
+
+        public Product GetByName(string name)
+        {
+            return _productRepository.GetByName(name);
+        }
+
+        public List<string> GetNameProduct()
+        {
+            return _productRepository.GetNameProduct();
+        }
+
+        public IEnumerable<Product> LatestProduct()
+        {
+            return _productRepository.LatestProduct();
+        }
+
+        public IEnumerable<Product> PickForYou()
+        {
+            return _productRepository.PickForYou();
         }
 
         public void Save()

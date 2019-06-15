@@ -59,15 +59,7 @@
     </Reference>
     <Reference Include="CKFinder, Version=2.6.0.2792, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\le huy\Downloads\ckfinder_aspnet_2.6.2\ckfinder\bin\Release\CKFinder.dll</HintPath>
-    </Reference>
-    <Reference Include="CKFinder_FileEditor, Version=2.1.0.1132, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\le huy\Downloads\ckfinder_aspnet_2.6.2\ckfinder\bin\Release\CKFinder_FileEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="CKFinder_Watermark, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\le huy\Downloads\ckfinder_aspnet_2.6.2\ckfinder\bin\Release\CKFinder_Watermark.dll</HintPath>
+      <HintPath>Assess\admin\ckfinder\Lib\CKFinder.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -181,30 +173,28 @@
     <Compile Include="Areas\Admin\Models\LoginViewAdmin.cs" />
     <Compile Include="Areas\Admin\Models\UserViewAdmin.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Core\BaseController.cs" />
+    <Compile Include="Infrastructure\Core\BaseControllerClient.cs" />
     <Compile Include="Infrastructure\Extension\EntityExtensions.cs" />
     <Compile Include="Mapping\AutoMapperConfiguration.cs" />
+    <Compile Include="Models\MenuGroupView.cs" />
+    <Compile Include="Models\PostCategoryView.cs" />
+    <Compile Include="Models\PostTagView.cs" />
+    <Compile Include="Models\PostView.cs" />
+    <Compile Include="Models\ProductCategoryView.cs" />
+    <Compile Include="Models\ProductView.cs" />
+    <Compile Include="Models\TagView.cs" />
+    <Compile Include="Models\UserView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assess\admin\ckfinder\bin\Debug\CKFinder.dll" />
-    <Content Include="Assess\admin\ckfinder\bin\Debug\CKFinder.pdb" />
-    <Content Include="Assess\admin\ckfinder\bin\Debug\CKFinder_FileEditor.dll" />
-    <Content Include="Assess\admin\ckfinder\bin\Debug\CKFinder_FileEditor.pdb" />
-    <Content Include="Assess\admin\ckfinder\bin\Debug\CKFinder_ImageResize.dll" />
-    <Content Include="Assess\admin\ckfinder\bin\Debug\CKFinder_ImageResize.pdb" />
-    <Content Include="Assess\admin\ckfinder\bin\Debug\CKFinder_Watermark.dll" />
-    <Content Include="Assess\admin\ckfinder\bin\Debug\CKFinder_Watermark.pdb" />
-    <Content Include="Assess\admin\ckfinder\bin\Release\CKFinder.dll" />
-    <Content Include="Assess\admin\ckfinder\bin\Release\CKFinder_FileEditor.dll" />
-    <Content Include="Assess\admin\ckfinder\bin\Release\CKFinder_FileEditor.pdb" />
-    <Content Include="Assess\admin\ckfinder\bin\Release\CKFinder_ImageResize.dll" />
-    <Content Include="Assess\admin\ckfinder\bin\Release\CKFinder_ImageResize.pdb" />
-    <Content Include="Assess\admin\ckfinder\bin\Release\CKFinder_Watermark.dll" />
-    <Content Include="Assess\admin\ckfinder\bin\Release\CKFinder_Watermark.pdb" />
     <Content Include="Assess\admin\ckfinder\changelog.txt" />
     <Content Include="Assess\admin\ckfinder\ckfinder.html" />
     <Content Include="Assess\admin\ckfinder\ckfinder.js" />
@@ -568,6 +558,7 @@
     <Content Include="Assess\admin\ckfinder\lang\zh-cn.js" />
     <Content Include="Assess\admin\ckfinder\lang\zh-tw.js" />
     <Content Include="Assess\admin\ckfinder\lang\_translationstatus.txt" />
+    <Content Include="Assess\admin\ckfinder\Lib\CKFinder.dll" />
     <Content Include="Assess\admin\ckfinder\license.txt" />
     <Content Include="Assess\admin\ckfinder\plugins\dummy\lang\en.js" />
     <Content Include="Assess\admin\ckfinder\plugins\dummy\lang\pl.js" />
@@ -835,19 +826,6 @@
     <Content Include="Assess\admin\ckfinder\skins\v1\skin.js" />
     <Content Include="Assess\admin\ckfinder\skins\v1\uipanel.css" />
     <Content Include="Assess\admin\ckfinder\translations.txt" />
-    <Content Include="Assess\admin\ckfinder\_samples\aspx\popup.aspx" />
-    <Content Include="Assess\admin\ckfinder\_samples\aspx\popups.aspx" />
-    <Content Include="Assess\admin\ckfinder\_samples\aspx\standalone.aspx" />
-    <Content Include="Assess\admin\ckfinder\_samples\ckeditor.html" />
-    <Content Include="Assess\admin\ckfinder\_samples\index.html" />
-    <Content Include="Assess\admin\ckfinder\_samples\popup.html" />
-    <Content Include="Assess\admin\ckfinder\_samples\popups.html" />
-    <Content Include="Assess\admin\ckfinder\_samples\public_api.html" />
-    <Content Include="Assess\admin\ckfinder\_samples\sample.css" />
-    <Content Include="Assess\admin\ckfinder\_samples\skin_bootstrap.html" />
-    <Content Include="Assess\admin\ckfinder\_samples\skin_v1.html" />
-    <Content Include="Assess\admin\ckfinder\_samples\standalone.html" />
-    <Content Include="Assess\admin\ckfinder\_samples\standalone_v1.html" />
     <Content Include="Assess\admin\css\main.css" />
     <Content Include="Assess\admin\css\main.min.css" />
     <Content Include="Assess\admin\css\sb-admin.css" />
@@ -2522,6 +2500,7 @@
     <Content Include="Assess\client\img\thumb-product03.jpg" />
     <Content Include="Assess\client\img\thumb-product04.jpg" />
     <Content Include="Assess\client\js\bootstrap.min.js" />
+    <Content Include="Assess\client\js\client.js" />
     <Content Include="Assess\client\js\jquery.min.js" />
     <Content Include="Assess\client\js\jquery.zoom.min.js" />
     <Content Include="Assess\client\js\main.js" />
@@ -2773,12 +2752,6 @@
     <Content Include="Areas\Admin\Views\Product\AddProduct.cshtml" />
     <Content Include="Areas\Admin\Views\Product\UpdateProduct.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategory\GetAllCategory.cshtml" />
-    <Content Include="Assess\admin\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
-    <Content Include="Assess\admin\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Assess\admin\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Assess\admin\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Assess\admin\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Assess\admin\ckfinder\userfiles\.htaccess" />
     <Content Include="Assess\client\fonts\fontawesome-webfont.eot" />
     <Content Include="Assess\client\fonts\fontawesome-webfont.ttf" />
     <Content Include="Assess\client\fonts\fontawesome-webfont.woff" />
@@ -2787,6 +2760,11 @@
     <Content Include="Assess\client\fonts\slick.eot" />
     <Content Include="Assess\client\fonts\slick.ttf" />
     <Content Include="Assess\client\fonts\slick.woff" />
+    <Content Include="Assess\admin\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
+    <Content Include="Assess\admin\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Assess\admin\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Assess\admin\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Assess\admin\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -2812,12 +2790,22 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\Shared\_Category.cshtml" />
+    <Content Include="Views\Products\DealsOfTheDay.cshtml" />
+    <Content Include="Views\Products\LatestProduct.cshtml" />
+    <Content Include="Views\Products\PickedForYou.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Order\Create.cshtml" />
+    <Content Include="Views\Products\GetProducts.cshtml" />
+    <Content Include="Views\User\ProfileClient.cshtml" />
+    <Content Include="Views\Products\ProductDetail.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Login\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Data\Image\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\BaseController1\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
