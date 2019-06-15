@@ -1,0 +1,42 @@
+﻿
+<!-- Account -->
+    <li class="header-account dropdown default-dropdown">
+
+        @if (ViewBag.Name != null)
+        {
+            <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+                <div class="header-btns-icon">
+                    <i class="fa fa-user-o"></i>
+                </div>
+                <strong class="text-uppercase">@ViewBag.Name.UserName   <i class="fa fa-caret-down"></i></strong>
+            </div>
+            <a href="/Login/Logout" class="text-uppercase">Logout</a> 
+            <ul class="custom-menu">
+                <li><a href="/User/ProfileClient/@ViewBag.Name.ID"><i class="fa fa-user-o"></i>Tài khoản</a></li>
+                <li><a href="#"><i class="fa fa-heart-o"></i>My Wishlist</a></li>
+                <li><a href="/Order/Create"><i class="fa fa-check"></i>Cart</a></li>
+                <li><a href="/Login/Logout"><i class="fa fa-unlock-alt"></i>Logout</a></li>
+                <li><a href="/Login/Create"><i class="fa fa-user-plus"></i>Tạo tài khoản</a></li>
+            </ul>
+        }
+        else
+        {
+            <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+                <div class="header-btns-icon">
+                    <i class="fa fa-user-o"></i>
+                </div>
+                <strong class="text-uppercase">Acount   <i class="fa fa-caret-down"></i></strong>
+            </div>
+            <a href="/Login/Login" class="text-uppercase">Login</a>
+            <ul class="custom-menu">
+                <li><a href="/User/ProfileClient"><i class="fa fa-user-o"></i>Tài khoản</a></li>
+                <li><a href="#"><i class="fa fa-heart-o"></i>My Wishlist</a></li>
+                <li><a href="/Order/Create"><i class="fa fa-check"></i>Cart</a></li>
+                <li><a href="/Login/Logout"><i class="fa fa-unlock-alt"></i>Login</a></li>
+                <li><a href="/Login/Create"><i class="fa fa-user-plus"></i>Tạo tài khoản</a></li>
+            </ul>
+        }
+
+
+    </li>
+<!-- /Account -->

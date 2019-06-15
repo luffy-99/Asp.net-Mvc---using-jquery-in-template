@@ -44,7 +44,7 @@ namespace ShopOnline.Controllers
         {
             var menuEntity = menuGroupService.GetAll();
             var menuView = AutoMapperConfiguration.Mapping.Map<IEnumerable<MenuGroup>, IEnumerable<MenuGroupView>>(menuEntity);
-            ViewBag.nameProduct = productService.GetNameProduct();
+            ViewBag.Products = productService.GetAll();
             return PartialView(menuView);
         }
         [ChildActionOnly]
@@ -56,6 +56,11 @@ namespace ShopOnline.Controllers
         }
         [ChildActionOnly]
         public ActionResult _Footer()
+        {
+            return PartialView();
+        }
+        [ChildActionOnly]
+        public ActionResult Cart()
         {
             return PartialView();
         }

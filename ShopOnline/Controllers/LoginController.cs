@@ -59,5 +59,19 @@ namespace ShopOnline.Controllers
             }
             return View();
         }
+        [ChildActionOnly]
+        public ActionResult Acount()
+        {
+            if(Session[CommonConstants.USER_SESSION] != null)
+            {
+                var user = (LoginViewAdmin)Session[CommonConstants.USER_SESSION];
+                ViewBag.Name = user;
+            }
+            else
+            {
+                ViewBag.Name = null;
+            }
+            return PartialView();
+        }
     }
 }

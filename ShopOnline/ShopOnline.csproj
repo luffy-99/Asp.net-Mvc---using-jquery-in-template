@@ -185,6 +185,7 @@
     <Compile Include="Infrastructure\Extension\EntityExtensions.cs" />
     <Compile Include="Mapping\AutoMapperConfiguration.cs" />
     <Compile Include="Models\MenuGroupView.cs" />
+    <Compile Include="Models\OrderDetailView.cs" />
     <Compile Include="Models\PostCategoryView.cs" />
     <Compile Include="Models\PostTagView.cs" />
     <Compile Include="Models\PostView.cs" />
@@ -2802,6 +2803,8 @@
     <Content Include="Views\Products\ProductDetail.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\Create.cshtml" />
+    <Content Include="Views\Login\Acount.cshtml" />
+    <Content Include="Views\Home\Cart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

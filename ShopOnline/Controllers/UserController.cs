@@ -1,4 +1,8 @@
-﻿using ShopOnline.Infrastructure.Core;
+﻿using Models;
+using Service;
+using ShopOnline.Infrastructure.Core;
+using ShopOnline.Mapping;
+using ShopOnline.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +14,16 @@ namespace ShopOnline.Controllers
     public class UserController : BaseControllerClient
     {
         // GET: User
-        public ActionResult ProfileClient()
+        private IUserService userService;
+        public UserController(IUserService userService)
         {
-            return View();
+            this.userService = userService;
+        }
+        public ActionResult ProfileClient(int id)
+        {
+            var userEntity = userService.GetUserById(id);
+            var userView = AutoMapperConfiguration.Mapping.Map<User, UserView>(userEntity);
+            return View(userView);
         }
     }
 }

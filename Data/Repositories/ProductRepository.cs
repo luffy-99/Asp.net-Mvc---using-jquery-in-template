@@ -15,6 +15,7 @@ namespace Data.Repositories
         IEnumerable<Product> DealsProduct();
         IEnumerable<Product> LatestProduct();
         IEnumerable<Product> PickForYou();
+        IEnumerable<Product> GetByCategory(int idCategory);
         Product GetByName(string name);
     }
     public class ProductRepository : RepositoryBase<Product>, IProductRepository
@@ -54,6 +55,11 @@ namespace Data.Repositories
         public Product GetByName(string name)
         {
             return dbSet.Where(x=>x.Name == name).SingleOrDefault();
+        }
+
+        public IEnumerable<Product> GetByCategory(int idCategory)
+        {
+            return dbSet.Where(x => x.CategoryID == idCategory);
         }
     }
 }

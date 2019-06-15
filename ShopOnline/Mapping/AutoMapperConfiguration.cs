@@ -22,6 +22,7 @@ namespace ShopOnline.Mapping
                 cfg.CreateMap<MenuGroup, MenuGroupView>();
                 cfg.CreateMap<ProductCategory, ProductCategoryView>();
                 cfg.CreateMap<Product, ProductView>();
+                cfg.CreateMap<User, UserView>();
             });
             Mapping = mapperConfig.CreateMapper();
         }

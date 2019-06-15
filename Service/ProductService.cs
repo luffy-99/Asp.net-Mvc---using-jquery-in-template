@@ -22,6 +22,7 @@ namespace Service
         IEnumerable<Product> LatestProduct();
         IEnumerable<Product> PickForYou();
         Product GetByName(string name);
+        IEnumerable<Product> GetByCategory(int id);
         void Save();
     }
     public class ProductService : IProductService
@@ -56,6 +57,11 @@ namespace Service
         public IEnumerable<Product> GetAll(string[] includes = null)
         {
             return _productRepository.GetAll(includes);
+        }
+
+        public IEnumerable<Product> GetByCategory(int id)
+        {
+            return _productRepository.GetByCategory(id);
         }
 
         public Product GetById(int id)

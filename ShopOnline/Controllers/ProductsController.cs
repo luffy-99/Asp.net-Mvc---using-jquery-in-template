@@ -1,4 +1,5 @@
 ﻿using Models;
+using PagedList;
 using Service;
 using ShopOnline.Mapping;
 using ShopOnline.Models;
@@ -57,9 +58,18 @@ namespace ShopOnline.Controllers
             ViewBag.salePick = salePick;
             return PartialView(productView);
         }
-        public ActionResult GetProducts()
+        [HttpGet]
+        public ActionResult GetProducts(int id, int page=1, int pageSize = 1)
         {
-            return View();
+            var productEntity = productService.GetByCategory(id); 
+            var productView = AutoMapperConfiguration.Mapping.Map<IEnumerable<Product>, IEnumerable<ProductView>>(productEntity);
+            int[] sale = new int[1000];
+            foreach (var product in productView)
+            {
+                sale[product.ID] = Convert.ToInt32(((product.Price - product.PromotionPrice) / product.Price) * 100);
+            }
+            ViewBag.sale = sale;
+            return View(productView.ToPagedList(page, pageSize));
         }
         [HttpGet]
         public ActionResult ProductDetail(int id)

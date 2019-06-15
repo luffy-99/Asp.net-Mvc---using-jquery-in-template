@@ -9,9 +9,9 @@
                 <li class="dropdown default-dropdown">
                     <a href="/Products/GetProducts" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" >@item.Name <i class="fa fa-caret-down"></i></a>
                     <ul class="custom-menu">
-                        @foreach (var name in ViewBag.nameProduct)
+                        @foreach (var name in ViewBag.Products)
                         {
-                            <li><a href="#">@name</a></li>
+                            <li><a href="/Products/ProductDetail/@name.ID">@name.Name</a></li>
                         }
                     </ul>
                 </li>
