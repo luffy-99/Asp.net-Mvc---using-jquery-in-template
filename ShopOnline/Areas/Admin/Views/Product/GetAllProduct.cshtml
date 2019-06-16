@@ -22,7 +22,7 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Name</th>
+                                    <th width="200px">Name</th>
                                     <th>Alias</th>
                                     <th>Category</th>
                                     <th>Image</th>
@@ -55,7 +55,7 @@
                                         <td>@item.Name</td>
                                         <td>@item.Alias</td>
                                         <td>@ViewBag.categoryName[item.CategoryID]</td>
-                                        <td><a href="@item.Image"></a></td>
+                                        <td><img src="@item.Image" width="120px" height="120px"/></td>
                                         <td>@item.MoreImages</td>
                                         <td>@item.Price</td>
                                         <td>@item.PromotionPrice</td>
